@@ -9,7 +9,18 @@ from nonebot.adapters.onebot.v11 import Message, MessageSegment,MessageEvent,Bot
 from nonebot.plugin import PluginMetadata
 from BingImageCreator import ImageGen
 from .config import Config, ConfigError
-
+__zx_plugin_name__ = "bing ai绘图"
+__plugin_usage__ = """
+usage：
+    画图：画图+问题
+""".strip()
+__plugin_des__ = "bing paint"
+__plugin_cmd__ = ["画图"]
+__plugin_type__ = ("一些工具",)
+__plugin_version__ = 0.3
+__plugin_author__ = "xuyufenfei"
+__plugin_settings__ = {"level": 5, "admin_level": 2, "default_status": True, "limit_superuser": False, "cmd": __plugin_cmd__}
+__plugin_cd_limit__ = {"cd": 10, "limit_type": "group", "rst": "请求过快！"}
 
 plugin_config = Config.parse_obj(nonebot.get_driver().config.dict())
 if not plugin_config.bing_cookies:
