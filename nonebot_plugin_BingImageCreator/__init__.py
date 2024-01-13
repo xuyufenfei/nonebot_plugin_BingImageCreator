@@ -31,20 +31,6 @@ if plugin_config.bing_proxy:
 
 paint = on_command("画图", block=False, priority=1)
 
-__plugin_meta__ = PluginMetadata(
-    name="DALL-E 3绘图",
-    description="调用NewBing的DALL-E 3进行绘图",
-    usage=
-    '''
-    直接发送: 画图 XXXXXX
-    ''',
-    config= Config,
-    extra={},
-    type="application",
-    homepage="https://github.com/Alpaca4610/nonebot_plugin_BingImageCreator.git",
-    supported_adapters={"~onebot.v11"}
-)
-
 
 @paint.handle()
 async def _(bot: Bot,event: MessageEvent, msg: Message = CommandArg()):
